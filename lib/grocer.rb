@@ -20,17 +20,13 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   new_cart = []
   cart.each do |val|
-    new_cart.length.times do |index|
-      binding.pry
-      if new_cart[index][:item] == val[:item]
-        binding.pry
-        new_cart[index][:count] += 1
-      else
-        item = val
-        item[:count] = 1
-        new_cart << item
-      end
-    end
-  end
+    if find_item_by_name_in_collection(val[:item], new_cart) == nil
+      item = val
+      item[:count] = 1
+      new_cart << item
+    else
+      index = new_cart.find_index(val[:item])
+      new_cart[index][:count] += 1
+    end 
   new_cart
 end
