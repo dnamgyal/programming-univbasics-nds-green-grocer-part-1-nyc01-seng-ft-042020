@@ -21,6 +21,7 @@ def consolidate_cart(cart)
   new_cart = []
   cart.each do |val|
     new_cart.length.times do |index|
+      binding.pry
       if new_cart[index][:item] == val[:item]
         binding.pry
         new_cart[index][:count] += 1
