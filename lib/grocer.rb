@@ -21,8 +21,8 @@ def consolidate_cart(cart)
   new_cart = []
   cart.each do |val|
     if find_item_by_name_in_collection(val[:item], new_cart) == nil
-      item = val
-      item[:count] = 1
+      
+      val[:count] = 1
       new_cart << item
     else
       index = new_cart.find_index(val[:item])
