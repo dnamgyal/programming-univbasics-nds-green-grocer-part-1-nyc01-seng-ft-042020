@@ -27,6 +27,6 @@ def consolidate_cart(cart)
     else
       index = new_cart.find_index(val[:item])
       new_cart[index][:count] += 1
-    end 
+    end
   new_cart
 end
