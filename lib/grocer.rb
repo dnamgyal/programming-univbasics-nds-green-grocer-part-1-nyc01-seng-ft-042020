@@ -1,3 +1,5 @@
+require "pry"
+
 def find_item_by_name_in_collection(name, collection)
   # Implement me first!
   #
@@ -20,6 +22,7 @@ def consolidate_cart(cart)
   cart.each do |val|
     new_cart.length.times do |index|
       if new_cart[index][:item] == val[:item]
+        binding.pry
         new_cart[index][:count] += 1
       else
         item = val
